@@ -1,0 +1,1 @@
+CreateObject("Wscript.Shell").Run "autospeedtest.bat", 0, True

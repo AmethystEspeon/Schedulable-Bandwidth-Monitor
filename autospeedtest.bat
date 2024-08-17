@@ -56,3 +56,5 @@ if %and%==T (
 )
 
 rm SpeedTestResultsPartial.json
+
+exit
