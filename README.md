@@ -16,3 +16,5 @@ At the top of autospeedtest.bat, there are a couple of customizable parameters. 
 
 # What you want to be wary of
 This IS a full bandwidth test. It is NOT a small amount of data. If you have a data cap, this is NOT the thing to do. There are some other ping monitors that are going to be way less bandwidth intensive that may or may not help you find your issues. If you have a low bandwidth max in the first place, this may eat it all. I made this because I just upgraded to Gigabit fiber, but am periodically getting significantly less than I paid for and I wanted to see if there was a trend.
+
+The JSON file that it outputs also includes things like your internal & external IP, your ISP, your mac address, etc. Do **NOT** make the webhook part public. You could easily be tracked though it. You should make a private discord server just for yourself or for you and your housemates.
