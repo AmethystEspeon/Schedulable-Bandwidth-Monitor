@@ -1,5 +1,5 @@
 # What it is
-This is a .batch file (and requisite other files) that you can schedule using Window's built in Task Scheduler to run automatic Bandwidth monitoring. It uses Ookla's SpeedTest CLI for testing, Git's install with Unix/Linx commands for GREP and GAWK for some filtering, and Discord for notifications! It's finished output is a txt file that includes all of the JSON results. Included is an executable that converts all the JSON files into a single CSV file usable with applications like Microsoft Excel and Google Sheets to make charts and graphs for easier readability.
+This is a .batch file (and requisite other files) that you can schedule using Window's built in Task Scheduler to run automatic Bandwidth monitoring. It uses Ookla's SpeedTest CLI for testing, Git's install with Unix/Linx commands for GREP and GAWK for some filtering, and Discord for notifications! It's finished output is a txt file that includes all of the JSON results. Included is an executable that converts all the JSON outputs into a single CSV file usable with applications like Microsoft Excel and Google Sheets to make charts and graphs for easier readability.
 
 The source code and includes for the executable are all in the repository if you want to compile it yourself!
 
