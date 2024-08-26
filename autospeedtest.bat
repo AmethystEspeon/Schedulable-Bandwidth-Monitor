@@ -10,14 +10,14 @@ SET /A download_bandwidth=0
 SET /A upload_bandwidth=0
 
 ::Checking to make sure we don't go above max_file size for results & failures
-for /f "delims=" %%A in ('dir /-C ^| gawk -F" " "$5 ~ /SpeedTestResults.json/ {print $4}"') do (
+for /f "delims=" %%A in ('dir /-C ^| gawk -F" " "$5 ~ /SpeedTestResults.txt/ {print $4}"') do (
     SET file_size=%%A
 )
-if %file_size% GEQ %max_file_size% rm SpeedTestResults.json
-for /f "delims=" %%A in ('dir /-C ^| gawk -F" " "$5 ~ /SpeedTestFailures.json/ {print $4}"') do (
+if %file_size% GEQ %max_file_size% rm SpeedTestResults.txt
+for /f "delims=" %%A in ('dir /-C ^| gawk -F" " "$5 ~ /SpeedTestFailures.txt/ {print $4}"') do (
     SET file_size=%%A
 )
-if %file_size% GEQ %max_file_size% rm SpeedTestResults.json
+if %file_size% GEQ %max_file_size% rm SpeedTestFailures.txt
 
 ::Getting our data, turn it into Mb/s
 speedtest.exe -f json > SpeedTestResultsPartial.json
@@ -34,9 +34,9 @@ if %download_bandwidth% LEQ 0 (SET or=T)
 if %upload_bandwidth% LEQ 0 (SET or=T)
 echo %or%
 if %or%==T (
-    echo %date%-%time% >> SpeedTestFailures.json
+    echo %date%-%time% >> SpeedTestFailures.txt
 ) else (
-    cat SpeedTestResultsPartial.json >> SpeedTestResults.json
+    cat SpeedTestResultsPartial.json >> SpeedTestResults.txt
 )
 
 SET and=T

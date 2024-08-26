@@ -1,3 +1,10 @@
 
-*.txt
+credentials.txt
 *.json
+jsonBandwidthToCSV.ilk
+jsonBandwidthToCSV.obj
+jsonBandwidthToCSV.pdb
+vc140.pdb
+SpeedTestResults.txt
+SpeedTestCSV.csv
+SpeedTestFailures.txt

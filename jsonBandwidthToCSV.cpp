@@ -9,8 +9,8 @@ using json = nlohmann::json;
 namespace ns {
     struct bandwidthData {
         std::string time;
-        int download;
-        int upload;
+        float download;
+        float upload;
     };
 
     void from_json(const json& j, bandwidthData& b) {
@@ -24,7 +24,7 @@ std::vector<ns::bandwidthData> getNewData(std::string);
 void writeCSV(std::vector<ns::bandwidthData>);
 void checkIfDelete();
 std::string mainFileName = "SpeedTestCSV.csv";
-std::string newDataFileName = "SpeedTestResults.json";
+std::string newDataFileName = "SpeedTestResults.txt";
 
 
 int main() {
@@ -76,8 +76,8 @@ void writeCSV(std::vector<ns::bandwidthData> newData) {
     file.open(mainFileName, std::ios::out | std::ios::app);
     for (auto it : newData) {
         file << it.time << ", "
-            << it.download << ", "
-            << it.upload << "\n";
+            << it.download / 125000. << ", "
+            << it.upload / 125000. << "\n";
     }
     file.close();
 
